@@ -12,9 +12,14 @@ void LocateByDistance(const vector<Vec3f>& input, vector<Position>& markers , fl
 void* Project::LocatorThread(void* arg)
 {
 	cout << "LocatorThread thread starts "<< endl;
-    clock_t start,stop;
+	clock_t start,stop;
 	float counter = 0.0;
-
+	VideoCapture cap(0); // open the default camera
+	if(!cap.isOpened())  // check if we succeeded
+	{
+		throw runtime_error("Camera could not be opened");
+		return -1;
+	}
 	while(1) 
 	{
 		start = clock();
@@ -32,9 +37,10 @@ void* Project::LocatorThread(void* arg)
 		UnlockMutex( &mutexParameters );
 
 		/* lock mutex for image matrices */
-		// load test image
-		frame = imread( "test_data/test.png" , 1);
-		
+		// load test image from camera
+// 		frame = imread( "test_data/test.png" , 1);
+		 cap >> frame; // get a new frame from camera
+		 
 		/** Color thresholding **/
 		
 		// Convert each frame from RGB to HSV

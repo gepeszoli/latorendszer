@@ -6,7 +6,7 @@ using namespace Project;
 
 void Init()
 {
-  signal(SIGPIPE, SIG_IGN);
+  signal(SIGPIPE, SIG_IGN); // SIGPIPE must be ignored (that is sent when a client connects to the InputCommandThread and terminates
 }
 int main(int argc, char** argv)
 {
