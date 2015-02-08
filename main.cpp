@@ -27,22 +27,22 @@ int main(int argc, char** argv)
     pthread_attr_t threadAttributes, threadAttributes2, threadAttributes3, threadAttributes4;    // thread attributes
 	int rV = pthread_attr_init( &threadAttributes ); // initialize the thread attribute object
     CheckPthreadError( rV, "main:pthread_attr_init");
-	rV = pthread_attr_setdetachstate( &threadAttributes, PTHREAD_CREATE_DETACHED );  // make the thread joinable (let other threads wait for it to finish)
+	rV = pthread_attr_setdetachstate( &threadAttributes, PTHREAD_CREATE_DETACHED );  // make the thread detached (not let other threads wait for it to finish)
 	CheckPthreadError( rV, "main:pthread_attr_setdetachstate");
 	
 	rV = pthread_attr_init( &threadAttributes2 ); // initialize the thread attribute object
     CheckPthreadError( rV, "main:pthread_attr_init");
-	rV = pthread_attr_setdetachstate( &threadAttributes2, PTHREAD_CREATE_DETACHED );  // make the thread joinable (let other threads wait for it to finish)
+	rV = pthread_attr_setdetachstate( &threadAttributes2, PTHREAD_CREATE_DETACHED );  // make the thread detached (not let other threads wait for it to finish)
 	CheckPthreadError( rV, "main:pthread_attr_setdetachstate");
 	
 	rV = pthread_attr_init( &threadAttributes3 ); // initialize the thread attribute object
 	CheckPthreadError( rV, "main:pthread_attr_init");
-	rV = pthread_attr_setdetachstate( &threadAttributes3, PTHREAD_CREATE_DETACHED );  // make the thread joinable (let other threads wait for it to finish)
+	rV = pthread_attr_setdetachstate( &threadAttributes3, PTHREAD_CREATE_DETACHED );  // make the thread detached (not let other threads wait for it to finish)
 	CheckPthreadError( rV, "main:pthread_attr_setdetachstate");
 	
 	rV = pthread_attr_init( &threadAttributes4 ); // initialize the thread attribute object
 	CheckPthreadError( rV, "main:pthread_attr_init");
-	rV = pthread_attr_setdetachstate( &threadAttributes4, PTHREAD_CREATE_DETACHED );  // make the thread joinable (let other threads wait for it to finish)
+	rV = pthread_attr_setdetachstate( &threadAttributes4, PTHREAD_CREATE_DETACHED );  // make the thread detached (not let other threads wait for it to finish)
 	CheckPthreadError( rV, "main:pthread_attr_setdetachstate");
 	
 	/* Start the threads */

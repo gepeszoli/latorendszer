@@ -125,7 +125,7 @@ void Project::InitalizeCommandSocket(int& socketFileDescriptor, sockaddr_in& add
 	address.sin_family = AF_INET;	// set address family
 	in_addr_t ina = INADDR_ANY;
  	memcpy( &address.sin_addr, &ina, sizeof(ina));
-//  	address.sin_addr =(in_addr) 0 ; // accept connection from anywhere   This sets it to INADDR_ANY
+//  	address.sin_addr =(in_addr) 0 ; 
 //	INADDR_ANY == 0x00000000
 	address.sin_port = htons(8888);	// set port number
 	// bind socket to address
