@@ -18,7 +18,6 @@ void* Project::LocatorThread(void* arg)
 	if(!cap.isOpened())  // check if we succeeded
 	{
 		throw runtime_error("Camera could not be opened");
-		return -1;
 	}
 	while(1) 
 	{
